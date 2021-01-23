@@ -84,7 +84,7 @@ func main() {
 		chunks = append(chunks, s)
 	}
 	for i, c := range chunks {
-		csvFile, _ := os.Create(fmt.Sprintf("result%d.csv", i))
+		csvFile, _ := os.Create(fmt.Sprintf("heracles%d.csv", i))
 		writer := csv.NewWriter(csvFile)
 		defer csvFile.Close()
 
