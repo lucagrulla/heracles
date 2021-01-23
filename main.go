@@ -80,7 +80,6 @@ func main() {
 			end = len(filteredData)
 		}
 		s := filteredData[i:end]
-		fmt.Println(s)
 		chunks = append(chunks, s)
 	}
 	for i, c := range chunks {
