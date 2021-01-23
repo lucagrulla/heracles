@@ -7,6 +7,9 @@ Looking to move your Fitbit Aria scale data into Withing Health Mate? Not usre h
 Fear no more!
 Heracles comes to rescue.
 
+<div style="text-align: center">
+<img src="heracles.gif" alt="drawing" style="width:200px;"/>
+</div>
 ## Installation
 
 ### Mac OSX
