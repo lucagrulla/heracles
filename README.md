@@ -2,7 +2,7 @@
 
 Your favourite importer for your Withings scale.
 
-Looking to move your Fitbit Aria scale data into Withing Health Mate? Not usre how to convert files from one format to another?
+Are you looking to move your Fitbit Aria scale data into Withings Health Mate and you are not sure how to convert files from one format to another?
 
 Fear no more!
 Heracles comes to rescue.
