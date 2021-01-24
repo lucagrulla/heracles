@@ -24,7 +24,7 @@ type bodyData struct {
 }
 
 const (
-	dataLimit  = 300
+	dataLimit  = 295
 	poundsToKg = 0.4535924
 )
 
