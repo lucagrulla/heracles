@@ -1,19 +1,19 @@
+# This is an example .goreleaser.yml file with some sane defaults.
+# Make sure to check the documentation at http://goreleaser.com
 builds:
-- 
-  env:
-    - CGO_ENABLED=0
-  goos:
-    - windows
-    - darwin
-    - linux
-  goarch:
-    - 386
-    - amd64
-    - arm
-    - arm64 
+  - env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - windows
+      - darwin
+    goarch:
+      - 386
+      - amd64
+      - arm
+      - arm64 
 archives:
-  -
-    replacements:
+  - replacements:
       darwin: Darwin
       linux: Linux
       windows: Windows
@@ -27,44 +27,19 @@ changelog:
   sort: asc
   filters:
     exclude:
-    - '^docs:'
-    - '^test:'
+      - '^docs:'
+      - '^test:'
 brews:
-  -
-    github:
-      owner: lucagrulla
-      name: homebrew-tap
+  - 
+    name: heracles
+    tap:
+        owner: lucagrulla
+        name: homebrew-tap
     commit_author:
       name: lucagrulla
-      email:
+      email: luca@lucagrulla.com
     folder: Formula
     homepage: "https://github.com/lucagrulla/heracles"
-    description: "Import your Fitibit Aria data to your Withings scale"
+    description: "Your favourite Fitbit-> Withings scale data importer"
     install: |
       bin.install "heracles"
-scoop:
-  bucket:
-    owner: lucagrulla
-    name: heracles-scoop-bucket
-  homepage: "https://github.com/lucagrulla/heracles"
-  commit_author:
-    name: lucagrulla
-    email:
-  description: "Import your Fitibit Aria data to your Withings scale"
-  license: Apache-2.0
-  persist:
-    - "data"
-    - "config.toml"
-nfpms:
-  -
-    file_name_template: '{{ .ProjectName }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
-    homepage:  https://www.lucagrulla.com/cw
-    description: Import your Fitibit Aria data to your Withings scale
-    license: Apache2
-    vendor: heracles
-    formats:
-    - rpm
-    dependencies:
-    - git
-    recommends:
-    - rpm
