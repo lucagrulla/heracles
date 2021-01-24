@@ -10,6 +10,7 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"time"
 )
 
 type bodyData struct {
@@ -87,12 +88,21 @@ func main() {
 		writer := csv.NewWriter(csvFile)
 		defer csvFile.Close()
 
-		var l [][]string
+		var lines [][]string
 		for _, d := range c {
 			kg := math.Round(d.Weight*poundsToKg*100) / 100
 			fatKg := kg / 100 * d.Fat
-			l = append(l, []string{fmt.Sprintf("%s %s", d.Date, d.Time), fmt.Sprintf("%.2f", kg), fmt.Sprintf("%.2f", fatKg)})
+			layout := "01/02/06 15:04:05"
+			y := fmt.Sprintf("%s %s", d.Date, d.Time)
+			t, _ := time.Parse(layout, y)
+
+			line := []string{t.Format("2006-01-02 15:04:05"), fmt.Sprintf("%.2f", kg)}
+			if fatKg != 0 {
+				fat := fmt.Sprintf("%.2f", fatKg)
+				line = append(line, fat)
+			}
+			lines = append(lines, line)
 		}
-		writer.WriteAll(l)
+		writer.WriteAll(lines)
 	}
 }
