@@ -35,30 +35,24 @@ brew install heracles
 
 Download the ```.deb``` or ```.rpm``` from the [releases page](https://github.com/lucagrulla/heracles) and install with ````dpkg -i```` and ````rpm -i```` respectively.
 
-### Go tools
-
-```bash
-go get github.com/lucagrulla/cw
-```
-
 Heracles will transform the fitbit export data in the Withings format.
 
 ## 3 Easy steps
-#### Export Fitbit data
+#### 1 - Export Fitbit data
 Export your data from Fitbit. Just follow the instruction [here](https://help.fitbit.com/articles/en_US/Help_article/1133.htm)
 Unzip the file and locate your weight data.
-They should be in a folder lookign like this:
-```console
+They should be in a folder looking like this:
+```
 ./MyFitbitData/<YourName>/Personal & Account
 ```
 Where your name is your actual name in the Fitbit account.
 
-### USe Heracles to do the magic
+### 2 - Use Heracles to do the magic
 Run Heracles.
 ```console
-heracles full_path_to_weight_data
+~ $ heracles full_path_to_weight_data
 ```
 Heracles will produce a number of csv files called `heracles.csv`, ready to be uploaded in Health Mate.
 
-### Import into Health Mate
+### 3 - Import your data into Health Mate
 Import all the csv files created by Heracles into Health Mate following the instruction [here](https://support.withings.com/hc/en-us/articles/201491477-Health-Mate-Online-Dashboard-Importing-data)
