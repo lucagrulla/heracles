@@ -10,6 +10,7 @@ Heracles comes to rescue.
 <div style="text-align: center">
     <img src="https://github.com/lucagrulla/heracles/blob/main/heracles.gif" alt="drawing" style="width:200px;"/>
 </div>
+
 ## Installation
 
 ### Mac OSX
